@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Zelda {
+public class L {
     private int ID;
     private String Plataforma;
     private String Nombre;
@@ -12,23 +12,24 @@ public class Zelda {
     private String Calificacion;
     private String URL;
 
-    public Zelda() {
+    public L() {
     }
 
-    public Zelda(String plataforma, String nombre, double duracion, String calificacion) {
-        Plataforma = plataforma;
-        Nombre = nombre;
-        Duracion = duracion;
-        Calificacion = calificacion;
-    }
-
-    public Zelda(int ID, String plataforma, String nombre, double duracion, String calificacion, String URL) {
+    public L(int ID, String plataforma, String nombre, double duracion, String calificacion, String URL) {
         this.ID = ID;
         Plataforma = plataforma;
         Nombre = nombre;
         Duracion = duracion;
         Calificacion = calificacion;
         this.URL = URL;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public String getPlataforma() {
@@ -63,14 +64,6 @@ public class Zelda {
         Calificacion = calificacion;
     }
 
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
     public String getURL() {
         return URL;
     }
@@ -81,7 +74,7 @@ public class Zelda {
 
     @Override
     public String toString() {
-        return "Zelda{" +
+        return "L{" +
                 "ID=" + ID +
                 ", Plataforma='" + Plataforma + '\'' +
                 ", Nombre='" + Nombre + '\'' +
@@ -90,5 +83,8 @@ public class Zelda {
                 ", URL='" + URL + '\'' +
                 '}';
     }
-
+    public ImageIcon getImagen() throws MalformedURLException {
+        URL urlImage = new URL(this.URL);
+        return new ImageIcon(urlImage);
+    }
 }
