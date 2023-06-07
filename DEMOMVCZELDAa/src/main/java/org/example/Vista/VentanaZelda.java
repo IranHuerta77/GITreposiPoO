@@ -79,7 +79,7 @@ public class VentanaZelda extends JFrame {
         //panel3
         panel3 = new JPanel(new FlowLayout());
         panel3.setBackground(new Color(167, 47, 194));
-        lblImagencompu = new JLabel("");
+        lblImagencompu = new JLabel("lblImagencompu");
         panel3.add(lblImagencompu);
 
 
@@ -244,6 +244,7 @@ public class VentanaZelda extends JFrame {
         this.lblImagencompu = lblImagencompu;
     }
 
+    //ESTO ES PRA QUE LOS CAMPOS EN LOS QUE SE LLENAN LOS DATOS SE LIMPIEN DESPUES DE DARLE EN AGREGAR
     public void limpiar(){
         txtPlataforma.setText("");
         txtNombre.setText("");

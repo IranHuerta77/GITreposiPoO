@@ -25,6 +25,7 @@ public class ZeldaDAO implements InterfazDAO{
         return rowCount > 0;
     }
 
+    //ESTO ES PARA ACTUALIZAR LOS DATOS
     @Override
     public boolean Update(Object obj) throws SQLException {
         String sqlUpdate = "UPDATE Zelda SET PLATAFORMA = ?, NOMBRE = ?, DURACION = ?, CALIFICACION = ?, URL = ? WHERE ID = ? ; ";
@@ -40,6 +41,7 @@ public class ZeldaDAO implements InterfazDAO{
         return rowCount > 0;
     }
 
+    //AQUÍ ES PARA BORRAR LOS DATOS BUSCANDOLOS POR EL ID
     @Override
     public boolean Delete(String ID) throws SQLException {
         String sqlDelete = "DELETE FROM Zelda WHERE ID = ? ; ";
@@ -51,6 +53,7 @@ public class ZeldaDAO implements InterfazDAO{
         return rowCount > 0;
     }
 
+    //LO
     @Override
     public Object buscarZeldaporID(String ID) throws SQLException {
         String sql = "SELECTED * FROM Zelda WHERE ID = ? ;";

@@ -83,6 +83,7 @@ public class L {
                 ", URL='" + URL + '\'' +
                 '}';
     }
+    //ESTO ES PARA LA IMAGEN
     public ImageIcon getImagen() throws MalformedURLException {
         URL urlImage = new URL(this.URL);
         return new ImageIcon(urlImage);

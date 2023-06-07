@@ -13,13 +13,14 @@ public class DLZeldaDB {
 
     public DLZeldaDB() {
     }
-
+//METODO PARA INSERTAR
     public void insertStatement(){
         String laPlataforma = "PRUEBA ANTES DE";
         String elNombre = "PRUEBA ANTES DE";
         String laDuracion = "PRUEBA ANTES DE";
         String laCalificacion = "PRUEBA ANTES DE";
         String elURL  = "PRUEBA ANTES DE";
+
         try {
             Statement stm = Csingle.getInstance("ZELdaDB.db").getConnection().createStatement();
 
@@ -34,6 +35,7 @@ public class DLZeldaDB {
         }
 
     }
+    //LO MISMO PERO CON STATEMENT(CREO)
     public void insertarPreparedStatement(){
         String laPlataforma = "PRUEBA COMO EN VIDEO";
         String elNombre = "PRUEBA COMO EN";
@@ -56,6 +58,7 @@ public class DLZeldaDB {
         }
     }
 
+    //AQUÍ SE INSERTABA EL JUEGO Y SU INFORMACION
     public boolean insertarZelda (L l){
         String sqlInsert = "INSERT INTO Zelda(PLATAFORMA, NOMBRE, DURACION, CALIFICACION, URL) VALUES(?, ?, ?, ?, ?)";
         int rowCount = 0;
@@ -75,6 +78,7 @@ public class DLZeldaDB {
         return  rowCount > 0;
     }
 
+    //ESTO ERA PARA BUSCAR EL JUEGO POR EL ID
     public L buscarZeldaporID(int ID){
         String sql = "SELECT * FROM Zelda WHERE ID = ? ;";
         L l = null;
@@ -90,6 +94,8 @@ public class DLZeldaDB {
         }
         return l;
     }
+
+    //ESTO ES PARA QUE MOSTRARATODO LO QUE HABIA EN LA BASE
     public ArrayList<L> obtenerTodo(){
         String sql = "SELECT * FROM Zelda";
         ArrayList<L> resultado = new ArrayList<>();

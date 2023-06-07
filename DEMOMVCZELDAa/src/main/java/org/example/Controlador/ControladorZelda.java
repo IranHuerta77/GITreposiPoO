@@ -29,13 +29,9 @@ public class ControladorZelda extends MouseAdapter {
             this.view.getTabla().setModel(modelo);
             this.view.getTabla().updateUI();
         }
+        //DE ESTÉ IF TOMÉ LO DEL VIEW.TABLA
         if (e.getSource() == this.view.getBotonAdd()){
-            int index = this.view.getTabla().getSelectedRow();
-            L tmp = modelo.getZeldaAtIndex(index);
-            try {
-                this.view.getLblImagencompu().setIcon(tmp.getImagen());
-            }catch (MalformedURLException mfue){
-                System.out.println(e.toString());
+
             }
             L l= new L();
             l.setID(0);
@@ -44,6 +40,7 @@ public class ControladorZelda extends MouseAdapter {
             l.setDuracion(Double.parseDouble(this.view.getTxtDuracion().getText()));
             l.setCalificacion(this.view.getTxtCalificacion().getText());
             l.setURL(this.view.getLblImagencompu().getText());
+
             if (modelo.agregarJuego(l)){
                 JOptionPane.showMessageDialog(view, "se pudo agregar bn", "AVISO", JOptionPane.INFORMATION_MESSAGE);
                 this.view.getTabla().updateUI();
@@ -51,6 +48,18 @@ public class ControladorZelda extends MouseAdapter {
                 JOptionPane.showMessageDialog(view,"no S33 PUDO AGREGAR A LA BASE DE DATOS", "ERROR AL INSERTAR", JOptionPane.ERROR_MESSAGE);
 
             }
+
+            //ESTE IF LO AGRRGUÉ PENSANDO QUE PODRÍA AYUDAR PARA QUE MOSTRARA LA IMAGEN, PERO NO
+            //EL IF LO TOMÉ DE ACÁ
+            if (e.getSource() == view.getTabla()){
+                int index = this.view.getTabla().getSelectedRow();
+                L tmp = modelo.getZeldaAtIndex(index);
+                try {
+                    this.view.getLblImagencompu().setIcon(tmp.getImagen());
+                }catch (MalformedURLException mfue){
+                    System.out.println(e.toString());
+            }
+                //ESTO ES LO DE LIMPIAR EN LA VENTANA
             this.view.limpiar();
 
 

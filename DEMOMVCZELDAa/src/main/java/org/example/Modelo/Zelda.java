@@ -30,7 +30,7 @@ public class Zelda {
         Calificacion = calificacion;
         this.URL = URL;
     }
-
+//RECUERDO QUE ESTOS SON LOS METODOS
     public String getPlataforma() {
         return Plataforma;
     }
